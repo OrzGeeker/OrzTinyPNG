@@ -19,4 +19,15 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    python_requires='>=2.7, <4',
+    install_requires=[
+        'twine',
+        'Click',
+        'tinify'
+    ],
+    entry_points = {
+        'console_scripts': [
+            'tiny = src:main'
+        ]
+    }
 )
