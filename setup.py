@@ -11,7 +11,7 @@ setuptools.setup(
     description="A tool for compress image such as png and jpg using TinyPNG API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/OrzGeeker/OrzTinyPNG",
     packages=setuptools.find_packages(),
     # all classifiers: https://pypi.org/classifiers/
     classifiers=[
