@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="OrzTinyPNG",
-    version="0.0.1",
+    version="0.0.2",
     author="wangzhizhou",
     author_email="824219521@qq.com",
     description="A tool for compress image such as png and jpg using TinyPNG API",
