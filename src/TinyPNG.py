@@ -4,7 +4,7 @@ import os
 
 class TinyPNG:
 
-    def __init__(self, app_key = 'MWmX23aKKpW6wsJjVC3gW1YUhh6CDOID'):
+    def __init__(self, app_key):
         tinify.key = app_key
 
     def compress(self,source, destination):
