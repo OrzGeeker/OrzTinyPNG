@@ -5,7 +5,7 @@ import sys
 import os
 import getopt
 
-def main():
+def main_task():
     app_key = 'MWmX23aKKpW6wsJjVC3gW1YUhh6CDOID'
     try:
         opts, args = getopt.getopt(sys.argv[1:], 'hk:', ["help", "app_key="])
