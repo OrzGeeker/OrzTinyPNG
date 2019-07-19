@@ -1,5 +1,27 @@
 # !/usr/bin/env bash
-# -*-: coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+# check Python Installation
+python --version &> /dev/null
+if [[ $? -ne 0 ]];
+then
+    echo Please Install Python!!!
+    exit -1
+fi
+
+# check pip installation!!!
+pip --version &> /dev/null
+if [[ $? -ne 0 ]];
+then
+    echo "$(curl -sL curl https://bootstrap.pypa.io/get-pip.py)" | sudo python
+fi
+
+# check virtualenv installation!!!
+virtualenv --version &> /dev/null
+if [[ $? -ne 0 ]];
+then
+    sudo pip install virtualenv
+fi
 
 virtualenv py2 -p python2.7
 virtualenv py3 -p python3
