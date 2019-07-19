@@ -21,8 +21,9 @@ class TinyPNG:
         _, ext = os.path.splitext(filePath)
         if ext in ['.png', '.jpg', '.JPEG', '.PNG', '.jpeg']:
             self.compress(source = filePath, destination = filePath)
+            print('✅' + filePath)
         else:
-            print('💥💥💥Unsupported Image Format!!!!')
+            print('❎Not Image!!')
 
     def process(self, path):
         print(path)
