@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="OrzTinyPNG",
-    version="0.0.4",
+    version="0.0.5",
     author="wangzhizhou",
     author_email="824219521@qq.com",
     description="A tool for compress image such as png and jpg using TinyPNG API",
@@ -19,7 +19,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=2.7, <4',
+    python_requires='>=3, <4',
     install_requires=[
         'twine',
         'tinify'

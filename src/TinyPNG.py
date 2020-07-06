@@ -38,19 +38,19 @@ class TinyPNG:
             else:
                 print('💥💥💥Not Exist!!!!')
 
-        except tinify.AccountError, e:
+        except tinify.AccountError as e:
             # Verify your API key and account limit.
             print("The error message is: %s" % e.message)
-        except tinify.ClientError, e:
+        except tinify.ClientError as e:
             # Check your source image and request options.
             print("The error message is: %s" % e.message)
-        except tinify.ServerError, e:
+        except tinify.ServerError as e:
             # Temporary issue with the Tinify API.
             print("The error message is: %s" % e.message)
             pass
-        except tinify.ConnectionError, e:
+        except tinify.ConnectionError as e:
             # A network connection error occurred.
             print("The error message is: %s" % e.message)
-        except Exception, e:
+        except Exception as e:
             # Something else went wrong, unrelated to the Tinify API.
             print("The error message is: %s" % e.message)

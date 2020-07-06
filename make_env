@@ -23,5 +23,4 @@ then
     sudo pip install virtualenv
 fi
 
-virtualenv py2 -p python2.7
 virtualenv py3 -p python3
