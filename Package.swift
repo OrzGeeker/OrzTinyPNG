@@ -32,6 +32,10 @@ let package = Package(
         .target(name: "libTinyPNG"),
         .testTarget(
             name: "libTinyPNGTests",
-            dependencies: ["libTinyPNG"])
+            dependencies: ["libTinyPNG"],
+            resources: [
+                .process("Resources")
+            ]
+        )
     ]
 )
