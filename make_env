@@ -2,25 +2,12 @@
 # -*- coding: utf-8 -*-
 
 # check Python Installation
-python --version &> /dev/null
+python3 --version &> /dev/null
 if [[ $? -ne 0 ]];
 then
-    echo Please Install Python!!!
+    echo Please Install Python3!!!
     exit -1
 fi
 
-# check pip installation!!!
-pip --version &> /dev/null
-if [[ $? -ne 0 ]];
-then
-    echo "$(curl -sL curl https://bootstrap.pypa.io/get-pip.py)" | sudo python
-fi
-
-# check virtualenv installation!!!
-virtualenv --version &> /dev/null
-if [[ $? -ne 0 ]];
-then
-    sudo pip install virtualenv
-fi
-
-virtualenv py3 -p python3
+rm -rf ./venv
+python3 -m venv ./venv && source ./venv/bin/activate && pip install -r requirements
