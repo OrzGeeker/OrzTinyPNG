@@ -10,18 +10,23 @@ import XCTest
 
 class LibTinyPNGTests: XCTestCase {
     let client = TinyPNGAPI(apiKey: "MWmX23aKKpW6wsJjVC3gW1YUhh6CDOID")
+    let testImageURL = URL(string: "https://tinify.com/static/images/globe-map.png")
     func testCompressImageWithURLAndDownloadResultAndResizeIt() async throws {
-        let imageURL = URL(string: "https://tinify.com/static/images/globe-map.png")
-        let (error, result) = try await client.compress(url: imageURL)
+        let (error, result) = try await client.compress(url: testImageURL)
         XCTAssertNil(error)
         XCTAssertNotNil(result)
-        if let ret = result, let desc = ret.description {
-            print(desc)
+        if let ret = result {
             let compressedImageData = try await client.download(url: ret.output.url)
             XCTAssertNotNil(compressedImageData)
-            let resizeModel = TinyPNGAPI.EndPoint.RequestModel.Resize(.fit, width: ret.output.width / 2 , height: ret.output.height / 2)
+            let resizeModel = TinyPNGAPIRequestModel.Resize(.fit, width: ret.output.width / 2 , height: ret.output.height / 2)
             let resizedImageData = try await client.resize(for: ret.output.url, resizeModel: resizeModel)
             XCTAssertNotNil(resizedImageData)
         }
+    }
+    func testCompressImageWithData() async throws {
+        let imageData = try Data(contentsOf: testImageURL!)
+        let (error, result) = try await client.compress(imageData: imageData)
+        XCTAssertNil(error)
+        XCTAssertNotNil(result)
     }
 }
