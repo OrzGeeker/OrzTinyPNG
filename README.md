@@ -5,7 +5,6 @@ This is a simple example package. You can use
 ## Usage
 
 ```bash
-python3 -m pip install pip_search
 python3 -m pip install OrzTinyPNG
 ```
 
