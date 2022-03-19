@@ -105,3 +105,4 @@ venv.bak/
 py2
 py3
 .vscode/
+.swiftpm/
