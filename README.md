@@ -5,7 +5,7 @@ This is a simple example package. You can use
 ## Usage
 
 ```bash
-$ git clone --depth=1 https://github.com/OrzGeeker/OrzTinyPNG.git && cd OrzTinyPNG && sudo python3 setup.py install 
+$ git clone --depth=1 https://github.com/OrzGeeker/OrzTinyPNG.git && cd OrzTinyPNG && sudo python3 setup.py install && cd .. && rm -rf OrzTinyPNG
 $ tiny -h
 ```
 
