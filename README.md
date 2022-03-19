@@ -5,7 +5,7 @@ This is a simple example package. You can use
 ## Usage
 
 ```bash
-$ pip install OrzTinyPNG
+$ git clone --depth=1 https://github.com/OrzGeeker/OrzTinyPNG.git && cd OrzTinyPNG && sudo python3 setup.py install 
 $ tiny -h
 ```
 
