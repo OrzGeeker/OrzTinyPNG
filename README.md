@@ -5,12 +5,8 @@ This is a simple example package. You can use
 ## Usage
 
 ```bash
-git clone --depth=1 https://github.com/OrzGeeker/OrzTinyPNG.git && \
-cd OrzTinyPNG && \
-python3 setup.py install && \
-cd .. && \
-rm -rf OrzTinyPNG && \
-tiny -h
+python3 -m pip install pip_search
+python3 -m pip install OrzTinyPNG
 ```
 
 [Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
