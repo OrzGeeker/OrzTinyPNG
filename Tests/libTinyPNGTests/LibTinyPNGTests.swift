@@ -17,8 +17,9 @@ class LibTinyPNGTests: XCTestCase {
     let testImageURL = URL(string: "https://tinify.com/static/images/globe-map.png")
     let testBundle = Bundle(for: LibTinyPNGTests.self)
     lazy var testTempDirFileURL: URL? = {
-        if let bundleId = testBundle.bundleIdentifier, let desktopDirFileURL = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first {
-            let tempDirURL = desktopDirFileURL.appendingPathComponent(bundleId)
+        if let desktopDirFileURL = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first {
+            let testDir = testBundle.bundleURL.deletingPathExtension().lastPathComponent
+            let tempDirURL = desktopDirFileURL.appendingPathComponent(testDir)
             return tempDirURL;
         }
         return nil
