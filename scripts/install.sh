@@ -5,5 +5,5 @@
 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 
 # install tinyPNG with homebrew
-brew tap OrzGeeker/OrzTinyPNG
+brew tap orzgeeker/orzgeeker
 brew install OrzTinyPNG
