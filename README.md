@@ -4,10 +4,12 @@ The Command Line Tool For Compress Image of JPG/PNG/WebP Format
 
 ## Installation
 
-Run Commands as follow in Terminal:
+1. Install `Homebrew` follow guide on the office website: <https://brew.sh/>
+
+2. After Install `Homebrew` successfully. Run Commands as follow in Terminal:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/OrzGeeker/OrzTinyPNG/master/scripts/install.sh)"
+brew tap orzgeeker/orzgeeker && brew install OrzTinyPNG
 ```
 
 ## Usage
