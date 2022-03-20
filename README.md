@@ -22,7 +22,7 @@ check the python edition OrzTinyPNG help with running command as follow in termi
 $ tiny
 ```
 
-### The Swift Edition Installation on MaxOS
+### The Swift Edition Installation on MacOS
 
 1. Install `Homebrew` follow guide on the office website: <https://brew.sh/>
 
