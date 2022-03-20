@@ -24,7 +24,7 @@ $ tiny <image_file_path>
 $ tiny <input_image_file_path> -o <output_image_file_path>
 ```
 
-3. compress images in a directory in-place
+3. compress images in a directory recursively in-place
 
 ```bash
 $ tiny <directory_path>
@@ -36,7 +36,7 @@ $ tiny <directory_path>
 $ tiny <directory_path> -o <dst_directory_path>
 ```
 
-5. compress images in current directory in-place
+5. compress images in current directory recursively in-place
 
 ```bash
 $ tiny .
