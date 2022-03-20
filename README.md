@@ -1,10 +1,28 @@
 # OrzTinyPNG
 
-The Command Line Tool For Compress Image of JPG/PNG/WebP Format On MacOS
+The Command Line Tool For Compress Image of JPG/PNG/WebP Format
+
+There are two editions written by `Swift/Python` language separately
 
 ## Installation
 
-### MacOSX
+### The Python Edition Installation
+
+Run command line as follow to install python edition of OrzTinyPNG
+
+```base
+python3 -m pip install pip_search && python3 -m pip install OrzTinyPNG
+```
+
+#### Usage of Python Edition
+
+check the python edition OrzTinyPNG help with running command as follow in terminal:
+
+```bash
+$ tiny
+```
+
+### The Swift Edition Installation on MaxOS
 
 1. Install `Homebrew` follow guide on the office website: <https://brew.sh/>
 
@@ -14,7 +32,7 @@ The Command Line Tool For Compress Image of JPG/PNG/WebP Format On MacOS
 brew tap orzgeeker/orzgeeker && brew install OrzTinyPNG
 ```
 
-#### Usage(Swift Edition)
+#### Usage of Swift Edition
 
 1. compress an image in-place
 
@@ -44,22 +62,6 @@ $ tiny <directory_path> -o <dst_directory_path>
 
 ```bash
 $ tiny .
-```
-
-### The Python Version Installation
-
-Run command line as follow to install python version OrzTinyPNG
-
-```base
-python3 -m pip install pip_search && python3 -m pip install OrzTinyPNG
-```
-
-#### Usage(Python Edition)
-
-check the python edition OrzTinyPNG help with running command as follow in terminal:
-
-```bash
-$ tiny
 ```
 
 # How to Write Markdown Documentation
