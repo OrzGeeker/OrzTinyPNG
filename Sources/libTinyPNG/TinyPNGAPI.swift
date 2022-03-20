@@ -12,6 +12,9 @@ import Foundation
 /// [TinyPNG API Reference](https://tinypng.com/developers/reference)
 public struct TinyPNGAPI {
     
+    public static let testClient = TinyPNGAPI(apiKey: "MWmX23aKKpW6wsJjVC3gW1YUhh6CDOID")
+    public static let supportFormats = ["png", "jpg", "jpeg", "webp"]
+    
     /// 存入API Key
     let apiKey: String
     
@@ -31,7 +34,7 @@ public struct TinyPNGAPI {
         guard srcFileURL.isFileURL else {
             return false
         }
-        guard ["png", "jpg", "jpeg", "webp"].contains(srcFileURL.pathExtension.lowercased()) else {
+        guard TinyPNGAPI.supportFormats.contains(srcFileURL.pathExtension.lowercased()) else {
             return false
         }
         guard let imageData = try? Data(contentsOf: srcFileURL), let (_, result) = try? await compress(imageData: imageData), let resultUrl = result?.output.url else {

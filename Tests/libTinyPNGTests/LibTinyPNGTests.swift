@@ -13,7 +13,7 @@ import Foundation.NSBundle
 class LibTinyPNGTests: XCTestCase {
     /// [testTarget 中获取Resources](https://developer.apple.com/documentation/swift_packages/bundling_resources_with_a_swift_package)
     let testResourceBundle = Bundle.module
-    let client = TinyPNGAPI(apiKey: "MWmX23aKKpW6wsJjVC3gW1YUhh6CDOID")
+    let client = TinyPNGAPI.testClient
     let testImageURL = URL(string: "https://tinify.com/static/images/globe-map.png")
     let testBundle = Bundle(for: LibTinyPNGTests.self)
     lazy var testTempDirFileURL: URL? = {
@@ -43,7 +43,7 @@ class LibTinyPNGTests: XCTestCase {
     }
     func testCompressLocalImageFile() async throws {
         XCTAssertNotNil(testTempDirFileURL, "获测试用的临时目录失败")
-        let testImageFileURLs = ["png", "jpg", "JPEG", "webp"]
+        let testImageFileURLs = TinyPNGAPI.supportFormats
             .map { testResourceBundle.url(forResource: "test", withExtension: $0) }
             .compactMap { $0 }
         for testImageFileURL in testImageFileURLs {
