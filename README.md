@@ -1,6 +1,6 @@
 # OrzTinyPNG
 
-The Command Line Tool For Compress Image of JPG/PNG/WebP Format
+The Command Line Tool For Compress Image of JPG/PNG/WebP Format On MacOS
 
 ## Installation
 
