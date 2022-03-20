@@ -43,12 +43,26 @@ final class CompressImageCommand: Command {
                     dstFileURL = dstFileURL.appendingPathComponent(srcFileURL.lastPathComponent)
                 }
                 currentCount += 1
-                let loadingBar = context.console.loadingBar(title: "[\(currentCount)/\(totolCount)] - \(srcFileURL.lastPathComponent)", targetQueue: progressBarQueue)
+                let title = "[\(currentCount)/\(totolCount)] - \(srcFileURL.lastPathComponent)"
+                let loadingBar = context.console.loadingBar(title: title, targetQueue: progressBarQueue)
                 loadingBar.start()
                 try DispatchGroup().syncExecAndWait {
-                    guard await TinyPNGAPI.testClient.compressImage(for:srcFileURL, dstFileURL:dstFileURL) else {
+                    let (ret, response) = await TinyPNGAPI.testClient.compressImage(for:srcFileURL, dstFileURL:dstFileURL)
+                    guard ret, let resp = response else {
                         loadingBar.fail()
                         return
+                    }
+                    let delta = resp.output.size - resp.input.size;
+                    var sign: String? = nil
+                    if delta > 0 {
+                        sign = "+"
+                    } else if delta < 0 {
+                        sign = "-"
+                    } else {
+                        sign = ""
+                    }
+                    if let inputSizeDesc = resp.input.size.fileSizeDesc, let outputSizeDesc = resp.output.size.fileSizeDesc, let sign = sign, let absDeltaDesc = abs(delta).fileSizeDesc {
+                        loadingBar.activity.title = title + " (\(inputSizeDesc) -> \(outputSizeDesc))[\(sign)\(absDeltaDesc)]"
                     }
                     loadingBar.succeed()
                 } errorClosure: { error in
@@ -80,5 +94,23 @@ extension CompressImageCommand {
             }
         })
         return ret
+    }
+}
+
+extension Int {
+    static let fileSizeUnits = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB", "BB"]
+    var fileSizeDesc: String? {
+        var unitIndex = -1
+        var ret = Double(self)
+        var last = ret
+        repeat {
+            last = ret
+            ret /= 1024.0
+            unitIndex += 1
+        } while ret > 1.0
+        guard unitIndex >= 0, unitIndex < Int.fileSizeUnits.count else {
+            return nil
+        }
+        return String(format: "%.2lf\(Int.fileSizeUnits[unitIndex])", last)
     }
 }

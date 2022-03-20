@@ -50,7 +50,7 @@ class LibTinyPNGTests: XCTestCase {
             XCTAssertNotNil(testImageFileURL, "测试图片路径获取失败")
             if let testTempDirFileURL = testTempDirFileURL {
                 let dstFileURL = testTempDirFileURL.appendingPathComponent(testImageFileURL.lastPathComponent)
-                let ret = await client.compressImage(for: testImageFileURL, dstFileURL: dstFileURL)
+                let (ret, _) = await client.compressImage(for: testImageFileURL, dstFileURL: dstFileURL)
                 XCTAssertTrue(ret, "压缩图片失败")
             }
         }

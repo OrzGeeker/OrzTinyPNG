@@ -30,27 +30,27 @@ public struct TinyPNGAPI {
     /// 压缩本地图片文件，压缩后覆盖原图
     /// - Parameter fileURL: 本地图片文件URL
     /// - Returns: 压缩覆盖是否成功
-    public func compressImage(for srcFileURL: URL, dstFileURL: URL) async -> Bool  {
+    public func compressImage(for srcFileURL: URL, dstFileURL: URL) async -> (Bool, TinyPNGAPIResponseModel?)  {
         guard srcFileURL.isFileURL else {
-            return false
+            return (false, nil)
         }
         guard TinyPNGAPI.supportFormats.contains(srcFileURL.pathExtension.lowercased()) else {
-            return false
+            return (false, nil)
         }
         guard let imageData = try? Data(contentsOf: srcFileURL), let (_, result) = try? await compress(imageData: imageData), let resultUrl = result?.output.url else {
-            return false
+            return (false, nil)
         }
         guard let resultImageData = try? await download(url: resultUrl) else {
-            return false
+            return (false, nil)
         }
         do {
             if !FileManager.default.fileExists(atPath: dstFileURL.deletingLastPathComponent().path) {
                 try FileManager.default.createDirectory(at: dstFileURL.deletingLastPathComponent(), withIntermediateDirectories: true)
             }
-            return FileManager.default.createFile(atPath: dstFileURL.path, contents: resultImageData)
+            return (FileManager.default.createFile(atPath: dstFileURL.path, contents: resultImageData), result)
         }
         catch {
-            return false
+            return (false, nil)
         }
     }
 }
