@@ -7,10 +7,7 @@ This is a simple example package. You can use
 Run Commands as follow in Terminal:
 
 ```bash
-
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/OrzGeeker/OrzTinyPNG/master/scripts/install.sh)"
 ```
 
 [Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
