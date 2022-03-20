@@ -4,8 +4,13 @@ This is a simple example package. You can use
 
 ## Usage
 
+Run Commands as follow in Terminal:
+
 ```bash
-python3 -m pip install OrzTinyPNG
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+
 ```
 
 [Github-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
