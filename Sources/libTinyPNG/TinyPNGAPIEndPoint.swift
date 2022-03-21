@@ -7,6 +7,11 @@
 
 import Foundation
 
+// 适配Linux Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 /// API核心定义
 public enum TinyPNGAPIEndPoint: String {
     static let apiHostURL = URL(string: "https://api.tinify.com")
