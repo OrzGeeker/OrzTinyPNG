@@ -54,6 +54,9 @@ public enum TinyPNGAPIEndPoint: String {
 #if canImport(FoundationNetworking)
         return try await withCheckedContinuation({ continuation in
             URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, let response = response else {
+                    fatalError()
+                }
                 continuation.resume(returning: (data, response))
             }.resume()
         })
