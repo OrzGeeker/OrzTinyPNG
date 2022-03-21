@@ -29,7 +29,7 @@ $ tiny
 2. After Install `Homebrew` successfully. Run Commands as follow in Terminal:
 
 ```bash
-brew tap orzgeeker/orzgeeker && brew install OrzTinyPNG
+brew tap orzgeeker/orzgeeker && brew install orztinypng
 ```
 
 #### Usage of Swift Edition
