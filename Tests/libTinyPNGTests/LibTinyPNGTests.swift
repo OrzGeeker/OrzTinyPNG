@@ -8,7 +8,6 @@
 import XCTest
 @testable import libTinyPNG
 import Foundation
-import Foundation.NSBundle
 
 class LibTinyPNGTests: XCTestCase {
     /// [testTarget 中获取Resources](https://developer.apple.com/documentation/swift_packages/bundling_resources_with_a_swift_package)
