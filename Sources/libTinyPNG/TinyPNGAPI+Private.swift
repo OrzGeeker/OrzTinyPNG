@@ -6,6 +6,10 @@
 //
 
 import Foundation
+/// [适配Linux Foundation](https://www.xknote.com/ask/611147cca0f56.html)
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 extension TinyPNGAPI {
     
