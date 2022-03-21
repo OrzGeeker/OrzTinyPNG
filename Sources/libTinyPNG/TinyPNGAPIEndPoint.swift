@@ -52,7 +52,7 @@ public enum TinyPNGAPIEndPoint: String {
     /// [参考文章](https://diegolavalle.com/posts/2021-11-11-urlsession-concurrency-linux/)
     static func dataTask(for request: URLRequest) async throws -> (Data, URLResponse) {
 #if canImport(FoundationNetworking)
-        return try await withCheckedContinuation({ continuation in
+        return await withCheckedContinuation({ continuation in
             URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, let response = response else {
                     fatalError()
