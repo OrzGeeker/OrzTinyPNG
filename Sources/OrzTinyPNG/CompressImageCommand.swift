@@ -14,7 +14,7 @@ final class CompressImageCommand: AsyncCommand {
     struct Signature: CommandSignature {
         @Argument(name: "input", help: "将要压缩的图片路径")
         var input: String
-        @Option(name: "number", short: "n", help: "执行n次压缩")
+        @Option(name: "number", help: "执行n次压缩")
         var number: Int?
         @Option(name: "output", short: "o", help: "压缩后存放的图片路径, 如果不设置，默认替换原图片")
         var output: String?
