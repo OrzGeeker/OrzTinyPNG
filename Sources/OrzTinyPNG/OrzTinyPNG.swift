@@ -8,8 +8,8 @@ struct OrzTinyPNG {
         let input = CommandInput(arguments: CommandLine.arguments)
         let commandContext = CommandContext(console: console, input: input)
         do {
-            let command: AnyCommand = CompressImageCommand()
-            try console.run(command, with: commandContext)
+            let command: AnyAsyncCommand = CompressImageCommand()
+            try await console.run(command, with: commandContext)
         } catch let error {
             console.error("\(error)")
             exit(1)
